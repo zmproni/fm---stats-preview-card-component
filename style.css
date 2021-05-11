@@ -32,10 +32,10 @@
   -webkit-margin-after: 0;
 }
 
-html,
+
 body {
-  min-width: 100%;
-  min-height: 100%;
+  min-width: 100vw;
+  min-height: 100vh;
 }
 
 html {
@@ -46,8 +46,9 @@ html {
 
 body {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   font-size: 15px;
 }
 
@@ -56,7 +57,7 @@ body {
 }
 
 .card {
-  margin: 15% auto;
+  margin: 5em;
   background: var(--card-background);
   max-width: 85%;
   width: 70em;
