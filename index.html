@@ -1,68 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
 
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/favicon-32x32.png"
-    />
-    <link rel="stylesheet" href="style.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- displays site properly based on user's device -->
 
-    <title>Frontend Mentor | Stats preview card component</title>
-  </head>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+  <link rel="stylesheet" href="style.css" />
 
-  <body>
-    <div class="card">
-      <img
-        class="card__image card__image--mobile-only"
-        src="images/image-header-mobile.jpg"
-        alt="People happly working in an office"
-      />
-      <div class="card__text-container">
-        <div class="card__header">
-          <strong>
-            Get <span class="text-highlight">insights</span> that help your
-            business grow.
-          </strong>
-        </div>
-        <div class="card__description">
-          <p>
-            Discover the benefits of data analytics and make better decisions
-            regarding revenue, customer experience, and overall efficiency.
-          </p>
-        </div>
-        <div class="card__stats">
-          <div class="card__stat">
-            <div class="card__stat-value">10k+</div>
-            <div class="card__stat-label">companies</div>
-          </div>
-          <div class="card__stat">
-            <div class="card__stat-value">314</div>
-            <div class="card__stat-label">templates</div>
-          </div>
-          <div class="card__stat">
-            <div class="card__stat-value">12M+</div>
-            <div class="card__stat-label">queries</div>
-          </div>
-        </div>
-      </div>
-      <img
-        class="card__image card__image--desktop-only"
-        src="images/image-header-desktop.jpg"
-        alt="People happly working in an office."
-      />
+  <title>Frontend Mentor | Stats preview card component</title>
+</head>
+
+<body>
+  <div class="card">
+    <picture class="card__image-container">
+      <img class="card__image card__image--large" src="./images/image-header-desktop.jpg">
+      <img class="card__image  card__image--small"  src="./images/image-header-mobile.jpg">
+      <div class="card__image-overlay"></div>
+    </picture>
+    <div class="card__content">
+      <h1 class="card__header">Get <span class="text-highlight">insights</span> that help your business grow.</h1>
+      <p class="card__text">
+        Discover the benefits of data analytics and make better decisions regarding revenue, customer
+        experience, and overall efficiency.
+      </p>
+
+      <ul class="card__stat-list">
+        <li class="card__stat-item">
+          <div class="card__stat-value">10k+</div>
+          <div class="card__stat-label">companies</div>
+        </li>
+        <li class="card__stat-item">
+          <div class="card__stat-value">314</div>
+          <div class="card__stat-label" >templates</div>
+        </li>
+        <li class="card__stat-item">
+          <div class="card__stat-value">12M+</div>
+          <div class="card__stat-label">queries</div>
+        </li>
+      </ul>
     </div>
+    <!-- <div class="card__image-container">
+      <div class="card__image">
+      </div>
+    </div> -->
 
-    <footer class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Alessandro Joshua Zamproni</a>.
-    </footer>
-  </body>
+  </div>
+
+  <footer class="attribution">
+    Challenge by
+    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a
+      href="#">Alessandro Joshua Zamproni</a>.
+  </footer>
+</body>
+
 </html>

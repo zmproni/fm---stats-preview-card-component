@@ -1,69 +1,203 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+
+:root {
+  --background: hsl(233, 47%, 7%);
+  --card-background: hsl(244, 38%, 16%);
+  --soft-accent: hsl(277, 64%, 61%);
+  --white: hsl(0, 0%, 100%);
+  --paragraph: hsla(0, 0%, 100%, 0.75);
+  --headings: hsla(0, 0%, 100%, 0.6);
+}
 
 .attribution {
-  position: absolute;
+  position: fixed;
   top: auto;
-  bottom: 0;
+  bottom: 5px;
   left: 0;
   right: 0;
   font-size: 11px;
   text-align: center;
-  color:hsl(0, 0%, 80%)
+  color: hsl(0, 0%, 80%);
 }
 
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+}
+
+html,
 body {
-    font-size: 15px;
-    background-color: hsl(233, 47%, 7%);
+  min-width: 100%;
+  min-height: 100%;
+}
+
+html {
+  background: var(--background);
+  font-family: "Inter", sans-serif;
+  /* font-family: 'Lexend Deca', sans-serif; */
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 15px;
 }
 
 .text-highlight {
-    color: hsl(277, 64%, 61%);
+  color: var(--soft-accent);
 }
 
-/* Card */
 .card {
-    background-color: hsl(244, 38%, 16%);
+  margin: 10% auto;
+  background: var(--card-background);
+  max-width: 85%;
+  width: 70em;
+  border-radius: 0.5em;
 }
 
-/* .card__text {
-    color: hsl(0, 0%, 100%);
-} */
-
-.card__header,
-.card__stat-value {
-    color: hsla(0, 0%, 100%, 0.6);
+.card__content {
+  display: inline-block;
+  padding: 2em;
 }
 
-.card__description,
-.card__stat-label {
-    color: hsla(0, 0%, 100%, 0.75);
+.card__image-container {
+  display: flex;
+  position: relative;
+  border-radius: 0.5em 0.5em 0 0;
 }
 
 .card__image {
-    width: 100%;
-    height: auto;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  overflow: hidden;
 }
 
-.card__image--desktop-only {
+.card__image--small {
+  display: block;
+}
+
+.card__image--large {
+  display: none;
+}
+
+.card__image-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background-color: hsl(277, 100%, 27%);
+  opacity: 0.5;
+}
+
+.card__header {
+  color: var(--white);
+  text-align: center;
+  font-size: 1.85em;
+  line-height: 1.3em;
+}
+
+.card__text {
+  color: var(--paragraph);
+  text-align: center;
+  line-height: 2em;
+  line-height: 1.6em;
+  padding: 2em 0;
+}
+
+.card__stat-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.card__stat-item {
+  display: block;
+  text-decoration: none;
+  margin: 1em;
+}
+
+.card__stat-label {
+  text-transform: uppercase;
+}
+
+.card__stat-value {
+  font-weight: 700;
+  font-size: 1.5em;
+  line-height: 1.8em;
+  text-align: center;
+  color: var(--white);
+}
+
+.card__stat-label {
+  color: var(--paragraph);
+}
+
+@media (min-width: 768px) {
+  .card__text,
+  .card__header {
+    text-align: left;
+  }
+
+  .card {
+    display: flex;
+  }
+
+  .card__image-container {
+    flex-grow: 1;
+    order: 2;
+    width: 50%;
+    border-radius: 0 0.5em 0.5em 0;
+  }
+
+  .card__content {
+    flex-grow: 1;
+    box-sizing: border-box;
+    width: 50%;
+    padding: 4em;
+  }
+
+  .card__text,
+  .card__stat-list {
+    width: 90%;
+  }
+
+  .card__header {
+    font-size: 2.3em;
+  }
+
+  .card__text {
+    padding: 2em 0;
+  }
+
+  .card__stat-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card__image--small {
     display: none;
-}
+  }
 
-.card__image--mobile-only {
+  .card__image--large {
     display: block;
-}
-
-/* Bigger than mobile */
-@media (min-width: 375px) {
-    .card__image--desktop-only {
-        display: block;
-    }
-
-    .card__image--mobile-only {
-        display: none;
-    }
+  }
 }
